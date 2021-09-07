@@ -1,0 +1,152 @@
+html {
+    color: white;
+    font-family: Arial;
+    font-size: 21px;
+}
+
+header {
+    padding: 10px;
+    background-color: green;
+    text-align: center;
+    font-family: 'Courier New';
+}
+
+body {
+    margin: 0;
+}
+
+footer {
+    padding: 10px;
+    background-color: green;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+
+.div_main {
+    background: blue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30.45%;
+    padding: 28px;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    word-spacing: 5px;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.streamlined-box {
+    margin-bottom: 15px;
+}
+
+.outlined-box {
+    color: red;
+    height: 120px;
+    width: 120px;
+    float: left;
+    margin: 5px 30px 35px 5px;
+    border-radius: 15px 0;
+    box-shadow: 0 0 0 6px white;
+}
+
+.red {
+    color: red;
+}
+
+.li_val2 {
+    color: cyan;
+    letter-spacing: 6px;
+}
+
+a {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+ul {
+    margin-top: 0;
+}
+
+li {
+    line-height: 1.8em;
+}
+
+.visual_styles {
+    line-height: 1.8em;
+    list-style: none;
+    padding: 0;
+}
+
+.grid_box {
+    float: right;
+
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: [col1-start] 50px  [col2-start] 50px  [col3-start] 50px
+    [col3-end];
+    grid-template-rows: [row1-start] 40px 
+    [row2-start] 40px
+    [row3-start] 40px
+    [row3-end];
+    padding: 5px;
+    width: 160px;
+    border: 1px solid white;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 1px solid white;
+}
+
+.b1 {
+    grid-column: col1-start;
+    grid-row: row1-start / row3-start;
+    background: green;
+}
+
+.b2 {
+    grid-column: col2-start ;
+    grid-row: row1-start;
+}
+
+.b3 {
+    grid-column: col3-start ;
+    grid-row: row1-start ;
+}
+
+.b4 {
+    grid-column: col2-start ;
+    grid-row: row2-start ;
+}
+
+.b5 {
+    grid-column: col3-start ;
+    grid-row: row2-start ;
+}
+
+.b6 {
+    grid-column: col1-start ;
+    grid-row: row3-start ;
+}
+
+.b7 {
+    grid-column: col2-start / col3-end ;
+    grid-row: row3-start ;
+    background: red;
+}
