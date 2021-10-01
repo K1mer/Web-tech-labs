@@ -13,9 +13,7 @@ header {
     padding: 10px;
     font-size: 26px;
 }
-.Footer {
-    position: relative;
-    bottom: 0;
+footer {
     background: black;
     color: white;
     text-align: center;
@@ -36,7 +34,7 @@ header {
     left: 0;
     background: red;
     max-width: 140px;
-    height: calc(100% - 60px);
+    height: calc(100% - 40px - 20px);
     padding: 30px 20px 30px 40px;
 }
 .SideElement a {
@@ -49,10 +47,11 @@ header {
 }
 
 .MainElement {
-    margin-left: 200px;
     display: inline-block;
+    margin-left: 200px;
     padding: 30px;
     max-width: calc(100% - 260px);
+    line-height: 1.35em;
 }
 .MainElement::first-letter {
     color: red;
