@@ -1,0 +1,141 @@
+html {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: #edeef0;
+    margin: 0;
+}
+header {
+    background: #507299;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+header img {
+    height: 30px;
+    margin-left: 15%;
+}
+
+footer {
+    clear: both;
+    background: white;
+    color: #d0d0d0;
+    text-align: center;
+    margin-top: 20px;
+    height: 25px;
+    padding: 5px;
+}
+
+a {
+    color:#2e5473;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.MainWrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.LeftSide {
+    float: left;
+    width: 200px;
+    padding: 10px;
+}
+
+.LeftSide a {
+    width: 100%;
+    padding: 10px;
+}
+
+.LeftSide a:hover {
+    background: #e1e5eb;
+}
+
+.CenterSide {
+    padding: 10px;
+    margin-left: 220px;
+}
+
+.ContentPanel {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px #d0d0d0;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+    max-width: 500px;
+}
+
+.ContentPanel::selection {
+    background: #e1e5eb;
+    color:green;
+}
+
+.ContentPanel img{
+    width: 100%;
+}
+
+.PostHeader {
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 3px;
+    padding-bottom: 10px;
+}
+
+.PostHeaderStyle {
+    font-weight: bold;
+}
+
+.WithHeader {
+    padding-top: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.ActionPanel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 3px solid #d0d0d0;
+    padding-top: 10px;
+    height: 20px;
+}
+
+.RightSide {
+    position: sticky;
+    top: 50px;
+    float: right;
+    width: 210px;
+    padding: 15px;
+}
+
+.ImportantPanel {
+    margin: 10px -10px;
+    background: #edeef0;
+}
+
+@media screen and (max-width:1075px) {
+    .RightSide {
+        display: none;
+    }
+    .MainWrapper {
+        max-width: 900px;
+    }
+}
+
+@media screen and (max-width:840px) {
+    .LeftSide {
+        float: none;
+        width: auto;
+        padding: 0 40px 30px 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .LeftSide a {
+        width: auto;
+    }
+    .CenterSide {
+        margin-left: 0;
+    }
+}
