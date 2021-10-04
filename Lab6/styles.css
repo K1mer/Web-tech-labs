@@ -1,0 +1,48 @@
+html {
+    margin: 0;
+}
+
+.MainPanel {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 50%;
+    min-height: 500px;
+    background: cyan;
+
+    position: relative;
+}
+
+img {
+    margin: 20px;
+    width: calc(100% - 40px);
+    height: 70%;
+}
+.pet {
+    position: absolute;
+    width: 50%;
+    height: calc(100% - 45px);
+    bottom: 0;
+}
+.cat {
+    background: blue;
+    left: 0;
+}
+.dog {
+    background: green;
+    right: 0;
+}
+
+button {
+    width: calc(100% / 3);
+    height: 45px;
+    background: red;
+    color: white;
+    border: 2px solid black;
+    font-size: large;
+    font-weight: bold;
+}
+
+button:hover {
+    background: rgb(255, 133, 133);
+}
