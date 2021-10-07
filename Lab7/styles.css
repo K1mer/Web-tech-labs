@@ -1,0 +1,45 @@
+.ControlPanel {
+    width: 250px;
+    height: 60px;
+}
+
+.DrawPanel {
+    height: calc(100vh - 60px - 16px);
+}
+
+.DrawPanel div {
+    --sizeMult: 1;
+    position: absolute;
+}
+
+.DrawPanel div:not(.Triangle) {
+    width: calc(5px * var(--sizeMult));
+    height: calc(5px * var(--sizeMult));
+
+    border: 1px solid black;
+}
+
+.Square {
+    background: rgba(255, 0, 0, 0.9);
+}
+
+.Circle {
+    background: rgba(0, 128, 0, 0.9);
+    border-radius: 50%;
+}
+
+.Triangle {
+    border-top: none;
+    border-bottom: calc(4px * var(--sizeMult)) solid rgba(0, 0, 255, 0.9);
+    border-left: calc(5px * var(--sizeMult)) solid transparent;
+    border-right: calc(5px * var(--sizeMult)) solid transparent;
+}
+
+.Chosen {
+    background: rgba(255, 250, 0, 0.9);
+}
+
+.Triangle.Chosen {
+    background: none;
+    border-bottom-color: rgba(255, 250, 0, 0.9);
+}
