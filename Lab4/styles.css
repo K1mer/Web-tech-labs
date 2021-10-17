@@ -129,7 +129,6 @@ a {
     .LeftSide {
         float: none;
         width: auto;
-        padding: 0 40px 30px 40px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -139,5 +138,8 @@ a {
     }
     .CenterSide {
         margin-left: 0;
+    }
+    .ContentPanel {
+        margin: 0 auto 20px auto;
     }
 }
