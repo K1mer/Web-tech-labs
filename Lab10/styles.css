@@ -33,12 +33,12 @@ body {
 }
 
 #Light {
-	width: 20px;
+	width: 30px;
 	height: 0;
-	border-left: 460px solid transparent;
-	border-right: 460px solid transparent;
-	border-bottom: 820px solid yellow;
-    left: calc(50% - 470px);
+	border-left: 470px solid transparent;
+	border-right: 470px solid transparent;
+	border-bottom: 890px solid yellow;
+    left: calc(50% - 485px);
     opacity: 0;
     transition: opacity 0.2s ease-in;
 
@@ -112,10 +112,10 @@ body {
 
 #PerformanceElem {
     position: absolute;
-    width: 700px;
+    width: calc(80vh);
     height: 400px;
-    left: calc(50% - 350px);
-    top: 450px;
+    left: calc(50% - 40vh);
+    bottom: 30px;
     opacity: 0;
     transition: opacity 0.2s ease-in;
 }
@@ -126,12 +126,18 @@ body {
 }
 
 #Hat {
-    right: 0;
+    left: 70%;
+    width: 28%;
+}
+
+#Magican {
+    width: 64%;
+    right: 30%;
 }
 
 #Bird, #Rabbit {
-    right: 50px;
+    left: calc(76%);
     bottom: 20px !important;
-    width: 100px;
+    width: 15%;
     transition: transform 0.5s ease-out;
 }

@@ -34,24 +34,24 @@ Lamp.childNodes.forEach(element => {
 Hat.onclick = function() {
     if (AnimalInHat) {
         if (RabbitNext) {
-            Rabbit.style.transform = "translate(0, -160px)"
+            Rabbit.style.transform = "translate(0, -150%)"
         }
         else
         {
-            Bird.style.transform = "translate(0, -160px)"
+            Bird.style.transform = "translate(0, -150%)"
         }
         AnimalInHat = false
     }
 }
 
 Rabbit.onclick = function() {
-    this.style.transform = "translate(0, 0px)"
+    this.style.transform = "translate(0, 0)"
     AnimalInHat = true
     RabbitNext = false
 }
 
 Bird.onclick = function() {
-    this.style.transform = "translate(0, 0px)"
+    this.style.transform = "translate(0, 0)"
     AnimalInHat = true
     RabbitNext = true
 }
