@@ -6,22 +6,22 @@ namespace Web2._1.Controllers
     public class CalcServiceController : Controller
     {
         private Random random = new Random();
-        public IActionResult PassUsingViewBag()
+        public IActionResult PassUsingViewBag(Services.CalcService calcService)
         {
             int a = random.Next() % 11;
             int b = random.Next() % 11;
 
             ViewBag.a = a; ViewBag.b = b;
 
-            ViewBag.Add = a + b;
-            ViewBag.Sub = a - b;
-            ViewBag.Mult = a * b;
-            ViewBag.Div = b != 0 ? (a / b).ToString() : "Infinity";
+            ViewBag.Add = calcService.Add(a, b);
+            ViewBag.Sub = calcService.Sub(a, b);
+            ViewBag.Mult = calcService.Mult(a, b);
+            ViewBag.Div = calcService.Div(a, b);
 
             return View();
         }
 
-        public IActionResult PassUsingViewData()
+        public IActionResult PassUsingViewData(Services.CalcService calcService)
         {
             int a = random.Next() % 11;
             int b = random.Next() % 11;
@@ -29,16 +29,11 @@ namespace Web2._1.Controllers
             ViewData["a"] = a;
             ViewData["b"] = b;
 
-            ViewData["Add"] = a + b;
-            ViewData["Sub"] = a - b;
-            ViewData["Mult"] = a * b;
-            ViewData["Div"] = b != 0 ? (a / b) : "Infinity";
+            ViewData["Add"] = calcService.Add(a, b);
+            ViewData["Sub"] = calcService.Sub(a, b);
+            ViewData["Mult"] = calcService.Mult(a, b);
+            ViewData["Div"] = calcService.Div(a, b);
 
-            return View();
-        }
-
-        public IActionResult AccessServiceDirectly()
-        {
             return View();
         }
 
@@ -47,9 +42,14 @@ namespace Web2._1.Controllers
             int a = random.Next() % 11;
             int b = random.Next() % 11;
 
-            CalcDataModel data = new(a, b);
+            CalcDataViewModel data = new(a, b);
 
             return View(data);
         }
+
+        //public IActionResult AccessServiceDirectly()
+        //{
+        //    return View();
+        //}
     }
 }

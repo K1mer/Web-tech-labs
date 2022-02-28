@@ -1,6 +1,6 @@
 ﻿namespace Web2._1.Models
 {
-    public class CalcDataModel
+    public class CalcDataViewModel
     {
         public int a;
         public int b;
@@ -9,7 +9,7 @@
         public string Mult;
         public string Div;
 
-        public CalcDataModel(int a, int b)
+        public CalcDataViewModel(int a, int b)
         {
             this.a = a; this.b = b;
             Add = (a + b).ToString();
