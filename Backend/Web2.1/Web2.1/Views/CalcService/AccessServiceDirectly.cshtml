@@ -1,8 +1,22 @@
-﻿@{
+﻿@inject Web2._1.Services.CalcService CalcService
+@{
     ViewData["Title"] = "AccessServiceDirectly";
+    int a = CalcService.GetInt(), b = CalcService.GetInt();
 }
 
 <div class="text-left">
     <h1 class="display-4">AccessServiceDirectly</h1>
+    <ul>
+        <li><b>Rand Value First: @a</b></li>
+        <li><b>Rand Value Second: @b</b></li>
 
+        <li><b>Add:</b></li>
+        <li>@a + @b = @CalcService.Add(a, b)</li>
+        <li><b>Sub:</b></li>
+        <li>@a - @b = @CalcService.Sub(a, b)</li>
+        <li><b>Mult:</b></li>
+        <li>@a * @b = @CalcService.Mult(a, b)</li>
+        <li><b>Div:</b></li>
+        <li>@a / @b = @CalcService.Div(a, b)</li>
+    </ul>
 </div>

@@ -1,18 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Web2._1.Models;
 
 namespace Web2._1.Controllers
 {
     public class CalcServiceController : Controller
     {
-        private Random random = new Random();
         public IActionResult PassUsingViewBag(Services.CalcService calcService)
         {
-            int a = random.Next() % 11;
-            int b = random.Next() % 11;
+            int a = calcService.GetInt();
+            int b = calcService.GetInt();
 
             ViewBag.a = a; ViewBag.b = b;
-
             ViewBag.Add = calcService.Add(a, b);
             ViewBag.Sub = calcService.Sub(a, b);
             ViewBag.Mult = calcService.Mult(a, b);
@@ -23,12 +20,10 @@ namespace Web2._1.Controllers
 
         public IActionResult PassUsingViewData(Services.CalcService calcService)
         {
-            int a = random.Next() % 11;
-            int b = random.Next() % 11;
+            int a = calcService.GetInt();
+            int b = calcService.GetInt();
 
-            ViewData["a"] = a;
-            ViewData["b"] = b;
-
+            ViewData["a"] = a; ViewData["b"] = b;
             ViewData["Add"] = calcService.Add(a, b);
             ViewData["Sub"] = calcService.Sub(a, b);
             ViewData["Mult"] = calcService.Mult(a, b);
@@ -37,19 +32,25 @@ namespace Web2._1.Controllers
             return View();
         }
 
-        public IActionResult PassUsingModel()
+        public IActionResult PassUsingModel(Services.CalcService calcService)
         {
-            int a = random.Next() % 11;
-            int b = random.Next() % 11;
+            int a = calcService.GetInt();
+            int b = calcService.GetInt();
 
-            CalcDataViewModel data = new(a, b);
+            Dictionary<string, string> data = new Dictionary<string, string>();
+
+            data["a"] = a.ToString(); data["b"] = b.ToString();
+            data["Add"] = calcService.Add(a, b);
+            data["Sub"] = calcService.Sub(a, b);
+            data["Mult"] = calcService.Mult(a, b);
+            data["Div"] = calcService.Div(a, b);
 
             return View(data);
         }
 
-        //public IActionResult AccessServiceDirectly()
-        //{
-        //    return View();
-        //}
+        public IActionResult AccessServiceDirectly()
+        {
+            return View();
+        }
     }
 }
