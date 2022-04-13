@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Sign up";
+
+    SelectList daysSL, monthsSL, yearsSL;
+
+    string[] d = new string[31];
+    for (int i = 0; i < 31; i++) d[i] = (i + 1).ToString();
+
+    string[] y = new string[120];
+    for (int i = 0; i < 120; i++) y[i] = (i + 1900).ToString();
+
+    daysSL = new SelectList(d);
+    monthsSL = new SelectList(new string[] {
+                "January",  "February", "March",
+                "April",    "May",      "June",
+                "July",     "August",   "September",
+                "October",  "November", "December"
+    });
+    yearsSL = new SelectList(y);
+}
+
+<div class="text-left">
+    <h1 class="display-4">Sign up</h1>
+    @{
+    using (Html.BeginForm("SignUp", "Mockups", FormMethod.Post))
+    {
+        <label><b>First name</b></label>
+        <br />
+        @Html.TextBox("FirstName")
+        <br /><br />
+
+        <label><b>Last name</b></label>
+        <br />
+        @Html.TextBox("LastName")
+        <br /><br />
+
+        <label><b>Birthday</b></label>
+        <br />
+        @Html.DropDownList("Birthday_Day", daysSL)
+        @Html.DropDownList("Birthday_Month", monthsSL)
+        @Html.DropDownList("Birthday_Year", yearsSL)
+        <br /><br />
+
+        <label><b>Gender</b></label>
+        <br />
+        @Html.RadioButton("Gender", "Male")
+        <span>Male</span> 
+        <br />
+        @Html.RadioButton("Gender", "Female")
+        <span>Female</span> 
+        <br /><br />
+
+        <input class="text-left" type="submit" value="Sign up" />
+    }
+    }
+</div>

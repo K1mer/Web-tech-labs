@@ -7,4 +7,8 @@
     <RootNamespace>Web2._4</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

@@ -24,3 +24,4 @@ D:\Desktop\Folders\Учеба\Web\Web-tech-labs\Backend\Web2.4\Web2.4\obj\Debug\
 D:\Desktop\Folders\Учеба\Web\Web-tech-labs\Backend\Web2.4\Web2.4\obj\Debug\net6.0\ref\Web2.4.dll
 D:\Desktop\Folders\Учеба\Web\Web-tech-labs\Backend\Web2.4\Web2.4\obj\Debug\net6.0\Web2.4.pdb
 D:\Desktop\Folders\Учеба\Web\Web-tech-labs\Backend\Web2.4\Web2.4\obj\Debug\net6.0\Web2.4.genruntimeconfig.cache
+D:\Desktop\Folders\Учеба\Web\Web-tech-labs\Backend\Web2.4\Web2.4\obj\Debug\net6.0\scopedcss\Views\Mockups\SignUp.cshtml.rz.scp.css

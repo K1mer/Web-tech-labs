@@ -8,5 +8,15 @@ namespace Web2._3.Controllers
         {
             return View();
         }
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        public IActionResult Reset()
+        {
+            return View();
+        }
     }
 }
