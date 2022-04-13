@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Drop-down List";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Drop-down List</h1>
+
+    @if(ViewData["Month"] == null)
+    {
+       using (Html.BeginForm("DropDownList", "Controls", FormMethod.Post))
+       {
+           <label><b>Month</b></label><br />
+           @Html.DropDownList("Month", new SelectList(new string[] { 
+                "January",  "February", "March",
+                "April",    "May",      "June",
+                "July",     "August",   "September",
+                "October",  "November", "December" 
+            }), "Choose month")
+
+            <p>
+                <input class="text-left" type="submit" value="Отправить" />
+            </p>
+       } 
+    }
+    else
+    {
+        <p>
+            <label><b>Month </b>@ViewData["Month"]</label>
+        </p>
+    }
+</div>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Text Box";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Text Box</h1>
+
+    @if(ViewData["Text"] == null)
+    {
+       using (Html.BeginForm("TextBox", "Controls", FormMethod.Post))
+       {
+            <p>
+                <label>Text </label><br />
+                @Html.TextBox("Text")
+            </p>
+
+            <p>
+                <input class="text-left" type="submit" value="Отправить" />
+            </p>
+       } 
+    }
+    else
+    {
+        <p>
+            <label><b>Text </b>@ViewData["Text"]</label>
+        </p>
+    }
+</div>
