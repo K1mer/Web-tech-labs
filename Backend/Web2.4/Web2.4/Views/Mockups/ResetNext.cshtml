@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Reset your password";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Reset your password</h1>
+    @{
+    using (Html.BeginForm("SignUp", "Mockups", FormMethod.Post))
+    {
+        <label><b>Code</b></label>
+        <br />
+        @Html.TextBox("Code")
+        <br /><br />
+
+        <input class="text-left" type="submit" value="Verify" />
+    }
+    }
+</div>

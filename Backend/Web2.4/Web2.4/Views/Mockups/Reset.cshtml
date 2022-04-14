@@ -4,7 +4,16 @@
 
 <div class="text-left">
     <h1 class="display-4">Reset your password</h1>
+    @{
+    using (Html.BeginForm("Reset", "Mockups", FormMethod.Post))
+    {
+        <label><b>Email</b></label>
+        <br />
+        @Html.TextBox("Email")
+        <br /><br />
 
-
-
+        <input class="text-left" type="submit" value="Send me a code" name="Action"/>
+        <input class="text-left" type="submit" value="I have a code" name="Action"/>
+    }
+    }
 </div>
