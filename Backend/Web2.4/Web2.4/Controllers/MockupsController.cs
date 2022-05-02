@@ -27,6 +27,11 @@ namespace Web2._3.Controllers
             string Birthday_Day, string Birthday_Month, string Birthday_Year,
             string Gender)
         {
+
+            if (!ModelState.IsValid) return View();
+
+
+
             Dictionary<string, string> data = new()
             {
                 ["FirstName"] = FirstName,
@@ -47,6 +52,7 @@ namespace Web2._3.Controllers
             string Remember)
         {
             if (!string.Equals(Password, ConfirmPassword)) return View("SignUpNext");
+            if (!ModelState.IsValid) return View("SignUpNext");
 
             Dictionary<string, string> data = new()
             {
