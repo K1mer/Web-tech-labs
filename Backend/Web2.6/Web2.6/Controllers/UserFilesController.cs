@@ -46,8 +46,9 @@ namespace Web2._6.Controllers
         }
 
         // GET: UserFiles/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
+            ViewBag.ReplyId = id;
             return View();
         }
 

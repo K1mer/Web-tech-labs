@@ -70,23 +70,31 @@ namespace Web2._6.Controllers
 
             var topicReplies = await _context.Replies.Where(rec => rec.ParentTopicId == firstTopic.Id).ToListAsync();
 
+            ViewBag.RepliesAttachedFiles = new Dictionary<int, List<UserFile>>();
+
+            var files = _context.AttachedFiles;
+
+            foreach (var reply in topicReplies)
+            {
+                var tempFiles = await files.Where(rec => rec.ParentReplyId == reply.Id).ToListAsync();
+                ViewBag.RepliesAttachedFiles[reply.Id] = tempFiles;
+            }
+
             return View(topicReplies);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddFile(IFormFile uploadedFile)
+        public async Task<IActionResult> AddFile(IFormFile uploadedFile, int replyId)
         {
             if (uploadedFile != null)
             {
-                // путь к папке Files
                 string path = "/Files/" + uploadedFile.FileName;
-                // сохраняем файл в папку Files в каталоге wwwroot
                 using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
                 {
                     await uploadedFile.CopyToAsync(fileStream);
                 }
-                UserFile file = new UserFile { Name = uploadedFile.FileName, Path = path };
-                //_context.Files.Add(file);
+                UserFile file = new UserFile { Name = uploadedFile.FileName, Path = path, ParentReplyId = replyId };
+                _context.AttachedFiles.Add(file);
                 _context.SaveChanges();
             }
 

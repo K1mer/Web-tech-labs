@@ -20,13 +20,18 @@
             @{ if (item.IsEdited) { <span>(edited @item.EditDate)</span> }}
             | <a asp-controller="Replies" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
             | <a asp-controller="Replies" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            | <a asp-action="Delete" asp-route-id="@item.Id">Attach</a>
+            | <a asp-controller="UserFiles" asp-action="Create" asp-route-id="@item.Id">Attach</a>
         </div>
         <div class="card-body">
             <p class="card-text">@item.Message</p>
         </div>
         <div class="card-body">
-            <p class="card-text">@item.Message</p>
+            @if (ViewBag.RepliesAttachedFiles[item.Id] != null) {
+                foreach(var f in ViewBag.RepliesAttachedFiles[item.Id]) {
+                    <p><img src="@Url.Content(f.Path)"></p>
+                    <a asp-controller="UserFiles" asp-action="Delete" asp-route-id="@f.Id" class="btn btn-danger">Delete</a>
+                }  
+            }
         </div>
     </div>
 }
